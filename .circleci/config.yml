@@ -4,11 +4,15 @@ jobs:
   BotMonitoring:
     docker:
       - image: circleci/python:3.9
+    environment:
+      anand: $anand
     steps:
       - checkout
       - run:
           name: Run Python script
-          command: python3 main.py
+          command: |
+            echo "Running with control room username: $anand"
+            python3 main.py
 
 workflows:
   version: 2
