@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Run Python script
           command: |
-            echo "Running with control room username: $anand"
+            printenv anand
             python3 main.py
 
 workflows:
