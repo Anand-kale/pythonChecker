@@ -4,8 +4,6 @@ jobs:
   BotMonitoring:
     docker:
       - image: circleci/python:3.9
-    environment:
-      anand: $anand
     steps:
       - checkout
       - run:
