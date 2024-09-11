@@ -7,10 +7,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Print environment variable
+          command: |
+            echo "Environment Variable 'anand': $anand"
+      - run:
           name: Run Python script
           command: |
-            printenv anand
-            python3 main.py anand
+            python3 main.py $anand
 
 workflows:
   version: 2
