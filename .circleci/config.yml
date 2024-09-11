@@ -10,7 +10,7 @@ jobs:
           name: Run Python script
           command: |
             printenv anand
-            python3 main.py
+            python3 main.py anand
 
 workflows:
   version: 2
