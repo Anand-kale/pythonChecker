@@ -1,0 +1,22 @@
+version: 2.2
+
+jobs:
+  BotMonitoring:
+    docker:
+      - image: circleci/python:3.9
+    steps:
+      - checkout
+      - run:
+          name: Print environment variable
+          command: |
+            echo "Environment Variable 'anand': $anand"
+      - run:
+          name: Run Python script
+          command: |
+            python3 main.py $anand
+
+workflows:
+  version: 2
+  commit-workflow:
+    jobs:
+      - BotMonitoring
