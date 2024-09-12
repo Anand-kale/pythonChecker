@@ -48,5 +48,9 @@ workflows:
   commit-workflow:
     jobs:
       - BotMonitoring_1
+  commit-workflow2:
+     jobs:
       - BotMonitoring_2
+  commit-workflow3:
+     jobs:
       - BotMonitoring_3
