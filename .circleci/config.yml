@@ -1,7 +1,7 @@
 version: 2.2
 
 jobs:
-  BotMonitoring:
+  BotMonitoring_1:
     docker:
       - image: circleci/python:3.9
     steps:
@@ -9,9 +9,37 @@ jobs:
       - run:
           name: Print environment variable
           command: |
-            echo "Environment Variable 'anand': $anand"
+            echo "Environment Variable 'anand' for Job 1: $anand"
       - run:
-          name: Run Python script
+          name: Run Python script for Job 1
+          command: |
+            python3 main.py $anand
+
+  BotMonitoring_2:
+    docker:
+      - image: circleci/python:3.9
+    steps:
+      - checkout
+      - run:
+          name: Print environment variable
+          command: |
+            echo "Environment Variable 'anand' for Job 2: $anand"
+      - run:
+          name: Run Python script for Job 2
+          command: |
+            python3 main.py $anand
+
+  BotMonitoring_3:
+    docker:
+      - image: circleci/python:3.9
+    steps:
+      - checkout
+      - run:
+          name: Print environment variable
+          command: |
+            echo "Environment Variable 'anand' for Job 3: $anand"
+      - run:
+          name: Run Python script for Job 3
           command: |
             python3 main.py $anand
 
@@ -19,4 +47,10 @@ workflows:
   version: 2
   commit-workflow:
     jobs:
-      - BotMonitoring
+      - BotMonitoring_1
+  commit-workflow2:
+     jobs:
+      - BotMonitoring_2
+  commit-workflow3:
+     jobs:
+      - BotMonitoring_3
