@@ -47,10 +47,24 @@ workflows:
   version: 2
   commit-workflow:
     jobs:
-      - BotMonitoring_1
+      - BotMonitoring_1:
+          filters:
+            branches:
+              only:
+                - sample  # Replace with your branch name
+
   commit-workflow2:
-     jobs:
-      - BotMonitoring_2
+    jobs:
+      - BotMonitoring_2:
+          filters:
+            branches:
+              only:
+                - sample5   # Replace with your branch name
+
   commit-workflow3:
-     jobs:
-      - BotMonitoring_3
+    jobs:
+      - BotMonitoring_3:
+          filters:
+            branches:
+              only:
+                - main   # Replace with your branch name
