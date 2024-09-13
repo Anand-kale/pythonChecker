@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
   BotMonitoring:
     docker:
@@ -8,15 +7,15 @@ jobs:
       - checkout
       - run:
           name: Run Python script
-          command: |
-            python3 main.py $anand
-
+          command: python3 main.py $CR_Uname_anand $CR_Pass_anand $GsheetMainID_anand
+            $GsheetAlertID_anand $EID_anand $EPass_anand $4 $apikey
 workflows:
   version: 2
   commit-workflow:
+    version: 2
     jobs:
       - BotMonitoring:
           filters:
             branches:
               only:
-                - main
+                - anandkalejh
