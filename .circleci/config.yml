@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
   BotMonitoring:
     docker:
@@ -8,15 +7,15 @@ jobs:
       - checkout
       - run:
           name: Run Python script
-          command: |
-            python3 main.py $anand
-
+          command: python3 main.py $CR_Uname_xalta $CR_Pass_xalta $GsheetMainID_xalta
+            $GsheetAlertID_xalta $EID_xalta $EPass_xalta $12 $password
 workflows:
   version: 2
   commit-workflow:
+    version: 2
     jobs:
       - BotMonitoring:
           filters:
             branches:
               only:
-                - main
+                - Lohith
